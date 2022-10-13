@@ -1,6 +1,10 @@
+/* Title Bar with Title */
 .titleBar {
   width: auto;
   height: 60px;
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
 }
 
 .grid-container {
@@ -10,6 +14,7 @@
   grid-template-columns: 1fr 20fr;
 }
 
+/*  */
 .grid-item-2 {
   background-color: #fadade;
 }
