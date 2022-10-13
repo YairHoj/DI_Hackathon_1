@@ -1,0 +1,14 @@
+.titleBar {
+  width: auto;
+  height: 60px;
+}
+
+.grid-container {
+  width: auto;
+  height: 540px;
+  display: grid;
+  grid-template-columns: 1fr 20fr;
+}
+
+.grid-item-2 {
+  background-color: #fadade;
