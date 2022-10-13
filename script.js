@@ -10,8 +10,20 @@ function TabPopUp() {
   popUp.classList.add("newTabBoxPopUp");
 }
 
-//Create a new Tab
+// Take input from New Tab title and Append the value to the location select in NewBox to allow ToDo items in certain locations
+$(document).ready(function () {
+  $(document).on("submit", "#newTabForm", function () {
+    let TabTitleInput = document.getElementById("newTabForm").elements[0].value;
+    let selectForm = document.getElementById("newBox-Location");
+    console.log(TabTitleInput);
+    let newSelect = document.createElement("option");
+    newSelect.textContent = TabTitleInput;
+    selectForm.append(newSelect);
+    return false;
+  });
+});
 
+//Create a new Tab
 function CreateTab() {
   let newTab = document.createElement("div");
 }
