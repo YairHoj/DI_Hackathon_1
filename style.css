@@ -3,6 +3,7 @@
   width: auto;
   height: 60px;
   font-size: 40px;
+  font-weight: bold;
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-wrap: wrap;
@@ -38,7 +39,7 @@
   grid-row: span 6;
 }
 #total-background {
-  margin: 0;
+  margin: 0px;
   padding: 0;
   font-family: "arial", heletica, sans-serif;
   font-size: 12px;
@@ -97,25 +98,56 @@
   }
 }
 
-#tab-button {
-  width: 90%;
-  height: 54.17px;
-  border: 3px;
-  background: rgba(250, 139, 152, 0.25);
+.collapsible {
+  background: none;
+  background-color: none;
+  cursor: pointer;
+  width: 54px;
+  height: 54px;
+  border-radius: 100%;
+  background: none;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(1px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.active,
+.collapsible:hover {
+  background-color: #ccc;
+}
+
+.buttons {
+  display: none;
+}
+
+#tab-button {
+  width: 54px;
+  height: 54px;
+  border: 3px;
+  cursor: pointer;
+  background: none;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 100%;
 }
 #box-button {
-  width: 90%;
-  height: 54.17px;
+  width: 54px;
+  height: 54px;
   border: 50px;
-  border-radius: 50px;
-  background: #fa8b98;
-  box-shadow: 5px 5px 11px #d57681, -5px -5px 11px #ffa0af;
+  cursor: pointer;
+  background: none;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
 }
 
 /* New Tab Pop Up Box */
@@ -134,6 +166,13 @@
   -ms-transition: opacity 0.3s ease-in-out;
   -o-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
+
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 #newTabBoxPopUpHidden {
@@ -144,7 +183,7 @@
 /* New Box Pop Up Box */
 
 .newBoxPopUp {
-  background-color: #eef0eb;
+  /* background-color: #eef0eb; */
   width: 500px;
   height: 450px;
   position: absolute;
@@ -158,6 +197,13 @@
   -ms-transition: opacity 0.3s ease-in-out;
   -o-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
+
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 #newBoxPopUpHidden {
