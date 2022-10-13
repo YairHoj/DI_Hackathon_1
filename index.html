@@ -31,13 +31,14 @@
         <div class="grid-item-2">
           2
           <div id="newTabBoxPopUpHidden">
+            <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
             <form id="newTabForm">
               <input
                 type="text"
-                class="newTab-title"
+                id="newTab-title"
                 placeholder="Insert Tab Title"
               />
-              <input type="submit" class="newTab-submit" />
+              <input type="submit" id="newTab-submit" />
             </form>
           </div>
           <div id="newBoxPopUpHidden">
@@ -47,7 +48,7 @@
                 class="newBox-Title"
                 placeholder="Insert todo box title"
               />
-              <select class="newBox-Location">
+              <select id="newBox-Location">
                 <option class="locationFirstSelect"></option>
               </select>
               <input
