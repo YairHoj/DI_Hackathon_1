@@ -24,12 +24,42 @@
       <div class="titleBar">Listly</div>
       <div class="grid-container">
         <div class="grid-item-1">
-          <button id="tab-button">1</button>
-          <button id="box-button">2</button>
+          1
+          <button id="tab-button">New Tab</button>
+          <button id="box-button">New Item</button>
         </div>
-        <div class="grid-item-2" id="grid-item-2">2</div>
+        <div class="grid-item-2">
+          2
+          <div id="newTabBoxPopUpHidden">
+            <form id="newTabForm">
+              <input
+                type="text"
+                class="newTab-title"
+                placeholder="Insert Tab Title"
+              />
+              <input type="submit" class="newTab-submit" />
+            </form>
+          </div>
+          <div id="newBoxPopUpHidden">
+            <form>
+              <input
+                type="text"
+                class="newBox-Title"
+                placeholder="Insert todo box title"
+              />
+              <select class="newBox-Location">
+                <option class="locationFirstSelect"></option>
+              </select>
+              <input
+                type="text"
+                class="newBox-Body"
+                placeholder="Insert any body text"
+              />
+              <input type="submit" />
+            </form>
+          </div>
+        </div>
       </div>
-      <section class="zach"></section>
     </section>
     <script src="./script.js"></script>
     <script

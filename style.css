@@ -117,3 +117,50 @@
   background: #fa8b98;
   box-shadow: 5px 5px 11px #d57681, -5px -5px 11px #ffa0af;
 }
+
+/* New Tab Pop Up Box */
+.newTabBoxPopUp {
+  background-color: #eef0eb;
+  width: 500px;
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 100%;
+  border-radius: 20px;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#newTabBoxPopUpHidden {
+  opacity: 0%;
+  transition-timing-function: ease-in;
+}
+
+/* New Box Pop Up Box */
+
+.newBoxPopUp {
+  background-color: #eef0eb;
+  width: 500px;
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 100%;
+  border-radius: 20px;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#newBoxPopUpHidden {
+  opacity: 0%;
+  transition-timing-function: ease-in;
+}
