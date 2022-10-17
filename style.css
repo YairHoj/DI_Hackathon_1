@@ -138,7 +138,7 @@
 
 #newTabBoxPopUpHidden {
   opacity: 0%;
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-in-out;
 }
 
 /* New Box Pop Up Box */
