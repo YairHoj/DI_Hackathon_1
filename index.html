@@ -26,10 +26,10 @@
         <div class="grid-item-1">
           <button type="button" class="collapsible"></button>
           <div class="buttons">
-            <button id="tab-button">
+            <button type="button" id="tab-button">
               <svg
-                width="46"
-                height="46"
+                width="40"
+                height="40"
                 fill="none"
                 stroke="currentColor"
                 stroke-linecap="round"
@@ -38,23 +38,47 @@
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="m15 14 5-5-5-5"></path>
-                <path d="M4 20v-7a4 4 0 0 1 4-4h12"></path>
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
               </svg>
             </button>
-            <button type="button" id="box-button">New Item</button>
+            <button type="button" id="box-button">
+              <svg
+                width="54"
+                height="60"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"></path>
+                <path d="m12 16 4-4-4-4"></path>
+                <path d="M8 12h8"></path>
+              </svg>
+            </button>
           </div>
         </div>
 
         <div class="grid-item-2">
           <div id="newTabBoxPopUpHidden">
             <form id="newTabForm">
-              <input
-                type="text"
-                class="newTab-title"
-                placeholder="Insert Tab Title"
-              />
-              <input type="submit" class="newTab-submit" />
+              <div class="newtabformdiv">
+                <div class="new-title">New Category</div>
+
+                <div class="title-input-text">
+                  <input
+                    type="text"
+                    class="newTab-title"
+                    placeholder="Insert tab title..."
+                  />
+                </div>
+                <div class="submit-title">
+                  <input type="submit" class="newTab-submit" />
+                </div>
+              </div>
             </form>
           </div>
           <div id="newBoxPopUpHidden">
