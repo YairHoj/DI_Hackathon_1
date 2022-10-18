@@ -19,6 +19,7 @@ function TabPopUp() {
     e = true;
   }
 }
+console.log("hi");
 newTabButton.addEventListener("click", TabPopUp);
 //Exit PopUp Tab
 
@@ -398,3 +399,5 @@ $(document).ready(function () {
     return false;
   });
 });
+
+//Zachary Amdur and Yair Hojberg
