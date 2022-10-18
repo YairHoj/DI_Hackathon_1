@@ -64,6 +64,7 @@
 
         <div class="grid-item-2">
           <div id="newTabBoxPopUpHidden">
+            <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
             <form id="newTabForm">
               <div class="newtabformdiv">
                 <div class="new-title">New Category</div>
@@ -80,15 +81,17 @@
                 </div>
               </div>
             </form>
+            <!--Add Favicon or Image for Exit button-->
+            <button onclick="ExitTabPopUp()"></button>
           </div>
           <div id="newBoxPopUpHidden">
-            <form>
+            <form id="newToDoBox">
               <input
                 type="text"
                 class="newBox-Title"
                 placeholder="Insert todo box title"
               />
-              <select class="newBox-Location">
+              <select id="newBox-Location">
                 <option class="locationFirstSelect"></option>
               </select>
               <input
@@ -97,6 +100,8 @@
                 placeholder="Insert any body text"
               />
               <input type="submit" />
+              <!--Add Favicon or Image for Exit button-->
+              <button onclick="ExitBoxPopUp()"></button>
             </form>
           </div>
         </div>
