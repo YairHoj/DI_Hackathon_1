@@ -106,6 +106,20 @@ function boxPopUp() {
   isToDoBoxPopUpActive = true;
 }
 
+var coll = document.getElementsByClassName("collapsible");
+var i;
+var svg = document.getElementsByClassName("collapsible-image");
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "1px";
+    }
+  });
+}
 // Exit button for new todo box
 let toDoBoxPopUp;
 toDoBoxPopUp = document.getElementById("newBoxPopUpHidden");
