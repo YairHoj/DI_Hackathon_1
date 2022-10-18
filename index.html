@@ -114,22 +114,40 @@
           </div>
           <div id="newBoxPopUpHidden">
             <form id="newToDoBox">
-              <input
-                type="text"
-                class="newBox-Title"
-                placeholder="Insert todo box title"
-              />
-              <select id="newBox-Location">
-                <option class="locationFirstSelect"></option>
-              </select>
-              <input
-                type="text"
-                class="newBox-Body"
-                placeholder="Insert any body text"
-              />
-              <input type="submit" />
-              <!--Add Favicon or Image for Exit button-->
-              <button onclick="ExitBoxPopUp()"></button>
+              <div class="container-item-list">
+                <div class="grid-item-list-1">
+                  <div class="grid-item-title">New to-do item</div>
+                </div>
+                <div class="grid-item-list-2">
+                  <input
+                    type="text"
+                    class="newBox-Title"
+                    placeholder="Insert todo box title"
+                  />
+                </div>
+
+                <div class="grid-item-list-3">
+                  <select id="newBox-Location">
+                    <option class="locationFirstSelect"></option>
+                  </select>
+                </div>
+                <div class="grid-item-list-4">
+                  <input
+                    type="text"
+                    class="newBox-Body"
+                    placeholder="Insert any body text"
+                    rows="8"
+                  />
+                </div>
+                <div class="grid-item-list-5">
+                  <input type="submit" class="newlist-submit" />
+                </div>
+                <div class="grid-item-list-6">
+                  <button class="exitbuttonlist" onclick="ExitBoxPopUp()">
+                    Cancel
+                  </button>
+                </div>
+              </div>
             </form>
           </div>
         </div>
