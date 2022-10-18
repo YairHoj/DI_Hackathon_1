@@ -19,7 +19,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="body">
     <section class="yair" id="total-background">
       <div class="titleBar">Listly</div>
       <div class="grid-container">
@@ -91,7 +91,12 @@
             <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
             <form id="newTabForm">
               <div class="newtabformdiv">
-                <div class="new-title">New Category</div>
+                <div class="new-title-text">New Category</div>
+                <div class="exit-title">
+                  <button class="exit-title-button" onclick="ExitTabPopUp()">
+                    Cancel
+                  </button>
+                </div>
 
                 <div class="title-input-text">
                   <input
@@ -106,7 +111,6 @@
               </div>
             </form>
             <!--Add Favicon or Image for Exit button-->
-            <button onclick="ExitTabPopUp()"></button>
           </div>
           <div id="newBoxPopUpHidden">
             <form id="newToDoBox">
