@@ -8,11 +8,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #fa8b98;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .grid-container {
@@ -61,6 +61,8 @@
   text-align: center;
 }
 
+=======
+
 .grid-item-box-col1 {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
@@ -91,63 +93,23 @@
 }
 
 #total-background {
-  margin: 0px;
-  padding: 0;
   font-family: "arial", heletica, sans-serif;
   font-size: 12px;
-  background: #2980b9
-    url("https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png")
-    repeat 0 0;
-  -webkit-animation: 10s linear 0s normal none infinite animate;
-  -moz-animation: 10s linear 0s normal none infinite animate;
-  -ms-animation: 10s linear 0s normal none infinite animate;
-  -o-animation: 10s linear 0s normal none infinite animate;
-  animation: 10s linear 0s normal none infinite animate;
+  height: 100vh;
+  background: #fffdd0;
 }
 
-@-webkit-keyframes animate {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 500px 0;
-  }
+
+.body {
+  margin: 0px;
+  padding-bottom: 0;
 }
 
-@-moz-keyframes animate {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 500px 0;
-  }
-}
-
-@-ms-keyframes animate {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 500px 0;
-  }
-}
-
-@-o-keyframes animate {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 500px 0;
-  }
-}
-
-@keyframes animate {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 500px 0;
-  }
+#total-background {
+  font-family: "arial", heletica, sans-serif;
+  font-size: 12px;
+  height: 100vh;
+  background: #fffdd0;
 }
 
 .collapsible {
@@ -240,9 +202,10 @@
   background-color: rgba(23, 137, 103, 0.7);
 }
 
+/* New tab styling start */
 .newtabformdiv {
   display: grid;
-  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr 0.5fr;
   grid-row-gap: 5px;
   justify-items: stretch;
   align-items: stretch;
@@ -253,15 +216,9 @@
 .new-title {
   height: 100px;
   width: 100%;
-  font-size: 50px;
-  color: white;
-  display: flex;
-  grid-row: 1;
+  display: grid;
+  grid-template-rows: 1fr 6fr;
   font-family: "Poppins", sans-serif;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 0px;
 }
 
 .title-input-text {
@@ -276,6 +233,40 @@
   margin: 6px;
 }
 
+.new-title-text {
+  font-size: 50px;
+  color: white;
+  grid-row: 1;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.exit-title {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.exit-title-button {
+  width: 100%;
+  height: 100%;
+  background: none;
+  font-family: "Poppins", sans-serif;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  background-color: rgba(255, 0, 0, 0.3);
+  border-color: black;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.exit-title-button:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+}
 .newTab-title {
   width: 100%;
   height: 100%;
@@ -314,15 +305,15 @@
   font-family: "Poppins", sans-serif;
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
-  background-color: rgba(155, 155, 155, 0.5);
+  background-color: rgba(5, 181, 20, 0.2);
   border-color: black;
   color: white;
   border-radius: 10px;
 }
 
 .newTab-submit:hover {
-  background-color: rgba(155, 155, 155, 0.5);
-  border-color: white;
+  background-color: rgba(5, 181, 20, 0.6);
+  cursor: pointer;
 }
 
 #newTabBoxPopUpHidden {
@@ -360,3 +351,5 @@
   opacity: 0%;
   transition-timing-function: ease-in;
 }
+
+/* New tab styling end */
