@@ -4,16 +4,20 @@ function capitalizeFirstLetter(string) {
 }
 
 //PopUp box for new tab
+let e = false;
 let newTabButton = document.getElementById("tab-button");
 var popUp;
 let tabPopUp;
 let isTabBoxPopUpActive;
 function TabPopUp() {
-  console.log("this event worked");
-  popUp = document.getElementById("newTabBoxPopUpHidden");
-  popUp.removeAttribute("id");
-  popUp.classList.add("newTabBoxPopUp");
-  isTabBoxPopUpActive = true;
+  if (e == false) {
+    console.log("this event worked");
+    popUp = document.getElementById("newTabBoxPopUpHidden");
+    popUp.removeAttribute("id");
+    popUp.classList.add("newTabBoxPopUp");
+    isTabBoxPopUpActive = true;
+    e = true;
+  }
 }
 newTabButton.addEventListener("click", TabPopUp);
 //Exit PopUp Tab
@@ -21,6 +25,7 @@ newTabButton.addEventListener("click", TabPopUp);
 function ExitTabPopUp() {
   popUp.removeAttribute("class");
   popUp.setAttribute("id", "newTabBoxPopUpHidden");
+  e = false;
 }
 let TabTitleInput;
 //Take input from New Tab title and Append the value to the location select in NewBox to allow ToDo items in certain locations
@@ -132,10 +137,13 @@ let isToDoBoxPopUpActive;
 newBoxButton.addEventListener("click", boxPopUp);
 
 function boxPopUp() {
-  let popUp = document.getElementById("newBoxPopUpHidden");
-  popUp.removeAttribute("id");
-  popUp.classList.add("newBoxPopUp");
-  isToDoBoxPopUpActive = true;
+  if (e == false) {
+    let popUp = document.getElementById("newBoxPopUpHidden");
+    popUp.removeAttribute("id");
+    popUp.classList.add("newBoxPopUp");
+    isToDoBoxPopUpActive = true;
+    e = true;
+  }
 }
 
 var coll = document.getElementsByClassName("collapsible");
@@ -159,6 +167,7 @@ toDoBoxPopUp = document.getElementById("newBoxPopUpHidden");
 function ExitBoxPopUp() {
   toDoBoxPopUp.removeAttribute("class");
   toDoBoxPopUp.setAttribute("id", "newBoxPopUpHidden");
+  e = false;
 }
 //globalizing todobox variables
 let isColBoxOpen = true;
