@@ -203,8 +203,6 @@
   display: grid;
   grid-template-rows: 1fr 3fr 1fr 0.5fr;
   grid-row-gap: 5px;
-  justify-items: stretch;
-  align-items: stretch;
   width: 500px;
   height: 450px;
 }
@@ -213,7 +211,6 @@
   height: 100px;
   width: 100%;
   display: grid;
-  grid-template-rows: 1fr 6fr;
   font-family: "Poppins", sans-serif;
 }
 
@@ -313,14 +310,14 @@
 }
 
 #newTabBoxPopUpHidden {
-  opacity: 0%;
+  display: none;
   transition-timing-function: ease-in-out;
 }
 
 /* New Box Pop Up Box */
 
 .newBoxPopUp {
-  /* background-color: #eef0eb; */
+  background-color: #eef0eb;
   width: 500px;
   height: 450px;
   position: absolute;
@@ -335,17 +332,173 @@
   -o-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
 
-  background: rgba(0, 0, 0, 0.4);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(5.5px);
-  -webkit-backdrop-filter: blur(5.5px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: rgba(23, 137, 103, 0.7);
 }
 
 #newBoxPopUpHidden {
-  opacity: 0%;
+  display: none;
   transition-timing-function: ease-in;
 }
 
+.container-item-list {
+  height: 450px;
+  width: 500px;
+  display: grid;
+  grid-template-rows: 2fr 2fr 4fr 2fr 1fr;
+  grid-template-columns: 5fr 1fr;
+  grid-row-gap: 5px;
+}
+/* Title */
+.grid-item-list-1 {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 500x79.08 */
+.grid-item-title {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 50px;
+}
+/*  */
+.grid-item-list-2 {
+  display: flex;
+  width: auto;
+  height: auto;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-color: none;
+  margin: 6px;
+}
+
+.newBox-Title {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  border: 5px#fa8b98;
+  border-bottom: 7px#fa8b98;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  outline: none;
+  padding-left: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.grid-item-list-3 {
+  display: flex;
+  width: auto;
+  height: auto;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-color: none;
+  margin: 6px;
+}
+
+#newBox-Location {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  border: 5px#fa8b98;
+  border-bottom: 7px#fa8b98;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  outline: none;
+  padding-left: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+}
+
+.grid-item-list-4 {
+  grid-column: span 2;
+  display: flex;
+  width: auto;
+  height: auto;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-color: none;
+  margin: 6px;
+}
+
+.newBox-Body {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  border: 5px#fa8b98;
+  border-bottom: 7px#fa8b98;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  outline: none;
+  padding-left: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  word-wrap: break-word;
+  padding-top: 10px;
+  padding-right: 10px;
+  resize: none;
+}
+
+/* Confirm button */
+.grid-item-list-5 {
+  grid-column: span 2;
+  display: flex;
+  width: auto;
+  height: auto;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+  border-color: none;
+  margin: 6px;
+}
+.newlist-submit {
+  width: 100%;
+  height: 100%;
+  background: none;
+  font-family: "Poppins", sans-serif;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  background-color: rgba(5, 181, 20, 0.2);
+  border-color: black;
+  color: white;
+  border-radius: 10px;
+}
+
+.newlist-submit:hover {
+  background-color: rgba(5, 181, 20, 0.6);
+  cursor: pointer;
+}
+
+/* Cancel Button */
+.grid-item-list-6 {
+  grid-column: span 2;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.exitbuttonlist {
+  width: 100%;
+  height: 100%;
+  background: none;
+  font-family: "Poppins", sans-serif;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  background-color: rgba(255, 0, 0, 0.3);
+  border-color: black;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.exitbuttonlist:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+}
 /* New tab styling end */
