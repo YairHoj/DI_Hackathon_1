@@ -3,6 +3,7 @@
   width: auto;
   height: 60px;
   font-size: 40px;
+  font-weight: bold;
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-wrap: wrap;
@@ -18,27 +19,24 @@
   width: auto;
   height: 85vh;
   display: grid;
-  grid-template-columns: 1fr 20fr;
+  grid-template-columns: 1fr 15fr;
 }
 
 .grid-item-1 {
   /* background-color: #fa8b98; */
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   grid-row: span 6;
-  background: rgba(250, 139, 152, 0.55);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: none;
 }
 
 .grid-item-2 {
   grid-row: span 6;
 }
 #total-background {
-  margin: 0;
+  margin: 0px;
   padding: 0;
   font-family: "arial", heletica, sans-serif;
   font-size: 12px;
@@ -97,25 +95,74 @@
   }
 }
 
-#tab-button {
-  width: 90%;
-  height: 54.17px;
-  border: 3px;
-  background: rgba(250, 139, 152, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+.collapsible {
+  background: none;
+  background-color: none;
+  cursor: pointer;
+  width: 54px;
+  height: 54px;
   border-radius: 100%;
+  background: none;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: rgba(23, 137, 103, 0.5);
+}
+
+.collapsible:after {
+  content: "\02795"; /* Unicode character for "plus" sign (+) */
+  font-size: 17px;
+  caret-color: black;
+  color: black;
+  float: right;
+  border: none;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+.buttons {
+  height: 150px;
+  background: none;
+  /* box-shadow: 0 300px 320px 0 rgba(31, 38, 135, 0.37); */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#tab-button {
+  width: 54px;
+  height: 54px;
+  cursor: pointer;
+  background: none;
+  backdrop-filter: blur(1px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  border-radius: 100%;
+  background-color: rgba(23, 137, 103, 0.5);
+  right: 30px;
 }
 #box-button {
-  width: 90%;
-  height: 54.17px;
-  border: 50px;
-  border-radius: 50px;
-  background: #fa8b98;
-  box-shadow: 5px 5px 11px #d57681, -5px -5px 11px #ffa0af;
+  width: 54px;
+  height: 54px;
+  cursor: pointer;
+  background: none;
+  backdrop-filter: blur(1px);
+  background-color: rgba(23, 137, 103, 0.5);
+  margin-top: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
 }
 
 /* New Tab Pop Up Box */
@@ -134,6 +181,93 @@
   -ms-transition: opacity 0.3s ease-in-out;
   -o-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
+
+  background-color: rgba(23, 137, 103, 0.7);
+}
+
+.newtabformdiv {
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr;
+  grid-row-gap: 5px;
+  justify-items: stretch;
+  align-items: stretch;
+  width: 500px;
+  height: 450px;
+}
+
+.new-title {
+  height: 100px;
+  width: 100%;
+  font-size: 50px;
+  color: white;
+  display: flex;
+  grid-row: 1;
+  font-family: "Poppins", sans-serif;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+}
+
+.title-input-text {
+  grid-row: 2;
+  display: flex;
+  width: auto;
+  height: auto;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-color: none;
+  margin: 6px;
+}
+
+.newTab-title {
+  width: 100%;
+  height: 100%;
+  font-size: 50px;
+  border: 5px#fa8b98;
+  border-bottom: 7px#fa8b98;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  outline: none;
+  padding-left: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.submit-title {
+  grid-row: 3;
+  display: flex;
+  width: auto;
+  height: auto;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+  border-color: none;
+  margin: 6px;
+}
+
+.newTab-submit {
+  width: 100%;
+  height: 100%;
+  background: none;
+  font-family: "Poppins", sans-serif;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  background-color: rgba(155, 155, 155, 0.5);
+  border-color: black;
+  color: white;
+  border-radius: 10px;
+}
+
+.newTab-submit:hover {
+  background-color: rgba(155, 155, 155, 0.5);
+  border-color: white;
 }
 
 #newTabBoxPopUpHidden {
@@ -144,7 +278,7 @@
 /* New Box Pop Up Box */
 
 .newBoxPopUp {
-  background-color: #eef0eb;
+  /* background-color: #eef0eb; */
   width: 500px;
   height: 450px;
   position: absolute;
@@ -158,6 +292,13 @@
   -ms-transition: opacity 0.3s ease-in-out;
   -o-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
+
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 #newBoxPopUpHidden {
