@@ -1,3 +1,8 @@
+//function to capatalize the first letter of each sentance
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 //PopUp box for new tab
 let e = false;
 let newTabButton = document.getElementById("tab-button");
@@ -14,6 +19,7 @@ function TabPopUp() {
     e = true;
   }
 }
+console.log("hi");
 newTabButton.addEventListener("click", TabPopUp);
 //Exit PopUp Tab
 
@@ -26,7 +32,7 @@ let TabTitleInput;
 //Take input from New Tab title and Append the value to the location select in NewBox to allow ToDo items in certain locations
 $(document).ready(function () {
   $(document).on("submit", "#newTabForm", function () {
-    TabTitleInput = document.getElementById("newTabForm").elements[0].value;
+    TabTitleInput = document.getElementById("newTabForm").elements[1].value;
     let selectForm = document.getElementById("newBox-Location");
     let newSelect = document.createElement("option");
     newSelect.textContent = TabTitleInput;
@@ -45,6 +51,10 @@ let tabAreaArray = [tabArea1, tabArea2, tabArea3, tabArea4];
 let isAreaFilled = [];
 let tabCounter = 0;
 let whichTabPlacement = true;
+let gridCol1 = document.getElementsByClassName("grid-item-box-col1");
+let gridCol2 = document.getElementsByClassName("grid-item-box-col2");
+let gridCol3 = document.getElementsByClassName("grid-item-box-col3");
+let gridCol4 = document.getElementsByClassName("grid-item-box-col4");
 
 //Create a New tab
 $(document).ready(function () {
@@ -58,37 +68,60 @@ $(document).ready(function () {
       tabCounter++;
     }
     let newTab = document.createElement("div");
-    let newTabH3 = document.createElement("h3");
-    newTabH3.textContent = TabTitleInput;
+    newTab.setAttribute("id", TabTitleInput);
+    let newTabH3 = document.createElement("p");
+    newTabH3.textContent = capitalizeFirstLetter(TabTitleInput);
+    console.log(TabTitleInput);
 
     newTab.style.width = "100%";
     newTab.style.height = "45px";
     newTab.style.backgroundColor = "white";
+    newTab.style.borderRadius = "5px";
+    newTabH3.style.color = "black";
+    newTabH3.style.fontWeight = "300px";
+    newTabH3.style.fontSize = "35px";
+    let toDoBoxCounter = 0;
 
     switch (whichTabPlacement) {
       case isAreaFilled[0]:
         tabAreaArray[0].appendChild(newTab);
         newTab.appendChild(newTabH3);
-        console.log("1");
         tabCounter = 0;
+        //within the newtab function also set the grid column to be the same id as the given title
+        while (gridCol1.length > toDoBoxCounter) {
+          gridCol1[toDoBoxCounter].setAttribute("id", TabTitleInput);
+          toDoBoxCounter++;
+        }
         break;
       case isAreaFilled[1]:
         tabAreaArray[1].append(newTab);
         newTab.appendChild(newTabH3);
-        console.log("2");
         tabCounter = 0;
+        //within the newtab function also set the grid column to be the same id as the given title
+        while (gridCol2.length > toDoBoxCounter) {
+          gridCol2[toDoBoxCounter].setAttribute("id", TabTitleInput);
+          toDoBoxCounter++;
+        }
         break;
       case isAreaFilled[2]:
         tabAreaArray[2].append(newTab);
         newTab.appendChild(newTabH3);
-        console.log("3");
         tabCounter = 0;
+        //within the newtab function also set the grid column to be the same id as the given title
+        while (gridCol3.length > toDoBoxCounter) {
+          gridCol3[toDoBoxCounter].setAttribute("id", TabTitleInput);
+          toDoBoxCounter++;
+        }
         break;
       case isAreaFilled[3]:
         tabAreaArray[3].append(newTab);
         newTab.appendChild(newTabH3);
-        console.log("4");
         tabCounter = 0;
+        //within the newtab function also set the grid column to be the same id as the given title
+        while (gridCol4.length > toDoBoxCounter) {
+          gridCol4[toDoBoxCounter].setAttribute("id", TabTitleInput);
+          toDoBoxCounter++;
+        }
         break;
       default:
         alert("You can only make 4 tabs");
@@ -137,11 +170,234 @@ function ExitBoxPopUp() {
   toDoBoxPopUp.setAttribute("id", "newBoxPopUpHidden");
   e = false;
 }
+//globalizing todobox variables
+let isColBoxOpen = true;
 
+let newBoxCounter = 0;
+let isBoxFilled1 = [];
+let isBoxFilled2 = [];
+let isBoxFilled3 = [];
+let isBoxFilled4 = [];
+
+let whichBoxPlacement = true;
 //Create a TodoBox
+
 $(document).ready(function () {
   $(document).on("submit", "#newToDoBox", function () {
+    let gridCol1ID = gridCol1[0].getAttribute("id");
+    let gridCol2ID = gridCol2[0].getAttribute("id");
+    let gridCol3ID = gridCol3[0].getAttribute("id");
+    let gridCol4ID = gridCol4[0].getAttribute("id");
+    console.log(gridCol1ID);
+    console.log(gridCol2ID);
+    console.log(gridCol3ID);
+    console.log(gridCol4ID);
+    let boxTitleInput = document.getElementById("newToDoBox").elements[0].value;
+    let boxLocation = document.getElementById("newToDoBox").elements[1].value;
+    let boxBody = document.getElementById("newToDoBox").elements[2].value;
+    console.log(gridCol1ID);
+
+    let toDoBoxCreation = document.createElement("div");
+    let toDoBoxTitle = document.createElement("h2");
+    toDoBoxTitle.textContent = boxTitleInput;
+    let toDoBoxBody = document.createElement("p");
+    toDoBoxBody.textContent = boxBody;
+
+    toDoBoxCreation.style.height = "200px";
+    toDoBoxCreation.style.width = "250px";
+    toDoBoxCreation.style.display = "block";
+    toDoBoxCreation.style.borderRadius = "5px";
+    toDoBoxCreation.style.backgroundColor = "white";
+
+    if (gridCol1ID === boxLocation) {
+      while (newBoxCounter < gridCol1.length) {
+        if (gridCol1[newBoxCounter].childElementCount === 0) {
+          isBoxFilled1[newBoxCounter] = true;
+        } else {
+          isBoxFilled1[newBoxCounter] = false;
+        }
+        newBoxCounter++;
+      }
+      console.log("1");
+      switch (whichBoxPlacement) {
+        case isBoxFilled1[0]:
+          gridCol1[0].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        case isBoxFilled1[1]:
+          gridCol1[1].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        case isBoxFilled1[2]:
+          gridCol1[2].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        case isBoxFilled1[3]:
+          gridCol1[3].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        case isBoxFilled1[4]:
+          gridCol1[4].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        default:
+          alert("You have the max ToDo Boxes");
+          newBoxCounter = 0;
+          break;
+      }
+    } else if (gridCol2ID === boxLocation) {
+      while (newBoxCounter < gridCol2.length) {
+        if (gridCol2[newBoxCounter].childElementCount === 0) {
+          isBoxFilled2[newBoxCounter] = true;
+        } else {
+          isBoxFilled2[newBoxCounter] = false;
+        }
+        newBoxCounter++;
+      }
+      console.log("2");
+      switch (whichBoxPlacement) {
+        case isBoxFilled2[0]:
+          gridCol2[0].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        case isBoxFilled2[1]:
+          gridCol2[1].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        case isBoxFilled2[2]:
+          gridCol2[2].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        case isBoxFilled2[3]:
+          gridCol2[3].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        case isBoxFilled2[4]:
+          gridCol1[4].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        default:
+          alert("You have the max ToDo Boxes");
+          newBoxCounter = 0;
+          break;
+      }
+    } else if (gridCol3ID === boxLocation) {
+      while (newBoxCounter < gridCol3.length) {
+        if (gridCol3[newBoxCounter].childElementCount === 0) {
+          isBoxFilled3[newBoxCounter] = true;
+        } else {
+          isBoxFilled3[newBoxCounter] = false;
+        }
+        newBoxCounter++;
+      }
+      console.log("3");
+      switch (whichBoxPlacement) {
+        case isBoxFilled3[0]:
+          gridCol3[0].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        case isBoxFilled3[1]:
+          gridCol3[1].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        case isBoxFilled3[2]:
+          gridCol1[2].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        case isBoxFilled3[3]:
+          gridCol3[3].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        case isBoxFilled3[4]:
+          gridCol3[4].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        default:
+          alert("You have the max ToDo Boxes");
+          newBoxCounter = 0;
+          break;
+      }
+    } else if (gridCol4ID === boxLocation) {
+      while (newBoxCounter < gridCol4.length) {
+        if (gridCol4[newBoxCounter].childElementCount === 0) {
+          isBoxFilled4[newBoxCounter] = true;
+        } else {
+          isBoxFilled4[newBoxCounter] = false;
+        }
+        newBoxCounter++;
+      }
+      console.log("4");
+      switch (whichBoxPlacement) {
+        case isBoxFilled4[0]:
+          gridCol4[0].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        case isBoxFilled4[1]:
+          gridCol4[1].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        case isBoxFilled4[2]:
+          gridCol4[2].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        case isBoxFilled4[3]:
+          gridCol4[3].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        case isBoxFilled4[4]:
+          gridCol4[4].appendChild(toDoBoxCreation);
+          toDoBoxCreation.appendChild(toDoBoxTitle);
+          toDoBoxCreation.appendChild(toDoBoxBody);
+          newBoxCounter = 0;
+          break;
+        default:
+          alert("You have the max ToDo Boxes");
+          newBoxCounter = 0;
+          break;
+      }
+    }
+    console.log(boxLocation);
     ExitBoxPopUp();
     return false;
   });
 });
+
+//Zachary Amdur and Yair Hojberg

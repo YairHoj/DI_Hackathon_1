@@ -1,3 +1,5 @@
+/* Yair Hojberg and Zachary Amdur */
+
 /* Title Bar with Title */
 .titleBar {
   width: auto;
@@ -35,7 +37,8 @@
 .grid-item-2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 70px 150px 150px 150px 150px 150px;
+  background-color: #fcfbe8;
+  grid-template-rows: 100px 250px 250px 250px 250px 250px;
 }
 
 #grid-item-tab1 {
@@ -54,36 +57,27 @@
   text-align: center;
 }
 #grid-item-tab4 {
-  border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 30px;
   text-align: center;
 }
 
 .grid-item-box-col1 {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 30px;
   text-align: center;
 }
 .grid-item-box-col2 {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 30px;
   text-align: center;
 }
 .grid-item-box-col3 {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 30px;
   text-align: center;
 }
 .grid-item-box-col4 {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 30px;
   text-align: center;
@@ -187,14 +181,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 100%;
   border-radius: 20px;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -moz-transition: opacity 0.3s ease-in-out;
-  -ms-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
-
   background-color: rgba(23, 137, 103, 0.7);
 }
 
@@ -311,7 +298,6 @@
 
 #newTabBoxPopUpHidden {
   display: none;
-  transition-timing-function: ease-in-out;
 }
 
 /* New Box Pop Up Box */
@@ -324,20 +310,17 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 100%;
   border-radius: 20px;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -moz-transition: opacity 0.3s ease-in-out;
-  -ms-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
-
-  background-color: rgba(23, 137, 103, 0.7);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 #newBoxPopUpHidden {
   display: none;
-  transition-timing-function: ease-in;
 }
 
 .container-item-list {
