@@ -33,8 +33,72 @@
 }
 
 .grid-item-2 {
-  grid-row: span 6;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: #2196f3;
+  grid-template-rows: 70px 150px 150px 150px 150px 150px;
 }
+
+#grid-item-tab1 {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+#grid-item-tab2 {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+#grid-item-tab3 {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+#grid-item-tab4 {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+=======
+
+.grid-item-box-col1 {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+.grid-item-box-col2 {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+.grid-item-box-col3 {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+.grid-item-box-col4 {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+#total-background {
+  font-family: "arial", heletica, sans-serif;
+  font-size: 12px;
+  height: 100vh;
+  background: #fffdd0;
+}
+
 
 .body {
   margin: 0px;

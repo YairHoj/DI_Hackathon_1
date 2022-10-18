@@ -1,6 +1,6 @@
 //PopUp box for new tab
 let newTabButton = document.getElementById("tab-button");
-
+var popUp;
 let tabPopUp;
 let isTabBoxPopUpActive;
 function TabPopUp() {
@@ -17,11 +17,11 @@ function ExitTabPopUp() {
   popUp.removeAttribute("class");
   popUp.setAttribute("id", "newTabBoxPopUpHidden");
 }
-
+let TabTitleInput;
 //Take input from New Tab title and Append the value to the location select in NewBox to allow ToDo items in certain locations
 $(document).ready(function () {
   $(document).on("submit", "#newTabForm", function () {
-    let TabTitleInput = document.getElementById("newTabForm").elements[0].value;
+    TabTitleInput = document.getElementById("newTabForm").elements[0].value;
     let selectForm = document.getElementById("newBox-Location");
     let newSelect = document.createElement("option");
     newSelect.textContent = TabTitleInput;
@@ -31,10 +31,65 @@ $(document).ready(function () {
   });
 });
 
+//globalizing main grid area variables
+let tabArea1 = document.getElementById("grid-item-tab1");
+let tabArea2 = document.getElementById("grid-item-tab2");
+let tabArea3 = document.getElementById("grid-item-tab3");
+let tabArea4 = document.getElementById("grid-item-tab4");
+let tabAreaArray = [tabArea1, tabArea2, tabArea3, tabArea4];
+let isAreaFilled = [];
+let tabCounter = 0;
+let whichTabPlacement = true;
+
 //Create a New tab
 $(document).ready(function () {
   $(document).on("submit", "#newTabForm", function () {
+    while (tabCounter < tabAreaArray.length) {
+      if (tabAreaArray[tabCounter].childElementCount === 0) {
+        isAreaFilled[tabCounter] = true;
+      } else {
+        isAreaFilled[tabCounter] = false;
+      }
+      tabCounter++;
+    }
     let newTab = document.createElement("div");
+    let newTabH3 = document.createElement("h3");
+    newTabH3.textContent = TabTitleInput;
+
+    newTab.style.width = "100%";
+    newTab.style.height = "45px";
+    newTab.style.backgroundColor = "white";
+
+    switch (whichTabPlacement) {
+      case isAreaFilled[0]:
+        tabAreaArray[0].appendChild(newTab);
+        newTab.appendChild(newTabH3);
+        console.log("1");
+        tabCounter = 0;
+        break;
+      case isAreaFilled[1]:
+        tabAreaArray[1].append(newTab);
+        newTab.appendChild(newTabH3);
+        console.log("2");
+        tabCounter = 0;
+        break;
+      case isAreaFilled[2]:
+        tabAreaArray[2].append(newTab);
+        newTab.appendChild(newTabH3);
+        console.log("3");
+        tabCounter = 0;
+        break;
+      case isAreaFilled[3]:
+        tabAreaArray[3].append(newTab);
+        newTab.appendChild(newTabH3);
+        console.log("4");
+        tabCounter = 0;
+        break;
+      default:
+        alert("You can only make 4 tabs");
+        break;
+    }
+
     return false;
   });
 });
