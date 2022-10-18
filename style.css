@@ -35,7 +35,6 @@
 .grid-item-2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  background-color: #2196f3;
   grid-template-rows: 70px 150px 150px 150px 150px 150px;
 }
 
@@ -60,8 +59,6 @@
   font-size: 30px;
   text-align: center;
 }
-
-=======
 
 .grid-item-box-col1 {
   background-color: rgba(255, 255, 255, 0.8);
@@ -98,7 +95,6 @@
   height: 100vh;
   background: #fffdd0;
 }
-
 
 .body {
   margin: 0px;
