@@ -73,13 +73,17 @@ $(document).ready(function () {
     newTabH3.textContent = capitalizeFirstLetter(TabTitleInput);
     console.log(TabTitleInput);
 
+    newTab.classList.add("title-class");
     newTab.style.width = "100%";
     newTab.style.height = "45px";
-    newTab.style.backgroundColor = "white";
-    newTab.style.borderRadius = "5px";
-    newTabH3.style.color = "black";
-    newTabH3.style.fontWeight = "300px";
-    newTabH3.style.fontSize = "35px";
+    // newTab.style.backgroundColor = "rgba(249, 105, 14, 0.7)";
+    newTab.style.borderRadius = "30px";
+    newTabH3.style.color = "white";
+    // newTabH3.style.border = "2pt solid black";
+    // newTabH3.style.borderRadius = "10px";
+    newTabH3.style.fontFamily = "Poppins,sans-serif";
+    newTabH3.style.fontWeight = "bolder";
+    newTabH3.style.fontSize = "24px";
     let toDoBoxCounter = 0;
 
     switch (whichTabPlacement) {
@@ -202,11 +206,36 @@ $(document).ready(function () {
     toDoBoxTitle.textContent = boxTitleInput;
     let toDoBoxBody = document.createElement("p");
     toDoBoxBody.textContent = boxBody;
+
+
+
+    // todobox (whole box)
+    toDoBoxCreation.classList.add("todobox-class");
     toDoBoxCreation.style.height = "200px";
     toDoBoxCreation.style.width = "250px";
     toDoBoxCreation.style.display = "block";
-    toDoBoxCreation.style.borderRadius = "5px";
-    toDoBoxCreation.style.backgroundColor = "white";
+    toDoBoxCreation.style.flexWrap = "wrap";
+
+    // todobox title
+    toDoBoxTitle.classList.add("todoboxtitle");
+    toDoBoxTitle.style.fontSize = "20px";
+    toDoBoxTitle.style.fontWeight = "200px";
+    toDoBoxTitle.style.fontFamily = "Poppins,sans-serif";
+    toDoBoxTitle.style.color = "white";
+
+    // todobox body
+    toDoBoxBody.classList.add("todoboxbody");
+    toDoBoxBody.style.fontSize = "15px";
+    toDoBoxBody.style.fontFamily = "Poppins,sans-serif";
+    toDoBoxBody.style.color = "white";
+
+    // newTab.style.width = "100%";
+    // newTab.style.height = "45px";
+    // newTab.style.borderRadius = "5px";
+    // newTabH3.style.color = "white";
+    // newTabH3.style.fontFamily = "Poppins,sans-serif";
+    // newTabH3.style.fontWeight = "300px";
+    // newTabH3.style.fontSize = "24px";
 
     if (gridCol1ID === boxLocation) {
       while (newBoxCounter < gridCol1.length) {
