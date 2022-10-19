@@ -183,6 +183,10 @@ let isBoxFilled2 = [];
 let isBoxFilled3 = [];
 let isBoxFilled4 = [];
 
+let boxTitleInput = document.getElementById("newToDoBox").elements[0].value;
+let boxLocation = document.getElementById("newToDoBox").elements[1].value;
+let boxBody = document.getElementById("newToDoBox").elements[2].value;
+
 let whichBoxPlacement = true;
 //Create a TodoBox
 
@@ -192,20 +196,18 @@ $(document).ready(function () {
     let gridCol2ID = gridCol2[0].getAttribute("id");
     let gridCol3ID = gridCol3[0].getAttribute("id");
     let gridCol4ID = gridCol4[0].getAttribute("id");
-    console.log(gridCol1ID);
-    console.log(gridCol2ID);
-    console.log(gridCol3ID);
-    console.log(gridCol4ID);
+
     let boxTitleInput = document.getElementById("newToDoBox").elements[0].value;
     let boxLocation = document.getElementById("newToDoBox").elements[1].value;
     let boxBody = document.getElementById("newToDoBox").elements[2].value;
-    console.log(gridCol1ID);
 
     let toDoBoxCreation = document.createElement("div");
     let toDoBoxTitle = document.createElement("h2");
     toDoBoxTitle.textContent = boxTitleInput;
     let toDoBoxBody = document.createElement("p");
     toDoBoxBody.textContent = boxBody;
+
+
 
     // todobox (whole box)
     toDoBoxCreation.classList.add("todobox-class");
@@ -250,12 +252,14 @@ $(document).ready(function () {
           gridCol1[0].appendChild(toDoBoxCreation);
           toDoBoxCreation.appendChild(toDoBoxTitle);
           toDoBoxCreation.appendChild(toDoBoxBody);
+
           newBoxCounter = 0;
           break;
         case isBoxFilled1[1]:
           gridCol1[1].appendChild(toDoBoxCreation);
           toDoBoxCreation.appendChild(toDoBoxTitle);
           toDoBoxCreation.appendChild(toDoBoxBody);
+
           newBoxCounter = 0;
           break;
         case isBoxFilled1[2]:

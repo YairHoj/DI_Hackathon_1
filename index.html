@@ -119,22 +119,6 @@
           </div>
           <div id="newBoxPopUpHidden">
             <form id="newToDoBox">
-              <input
-                type="text"
-                class="newBox-Title"
-                placeholder="Insert todo box title"
-              />
-              <select id="newBox-Location">
-                <option class="locationFirstSelect"></option>
-              </select>
-              <input
-                type="text"
-                class="newBox-Body"
-                placeholder="Insert any body text"
-              />
-              <input type="submit" />
-              <!--Add Favicon or Image for Exit button-->
-              <button type="button" onclick="ExitBoxPopUp()"></button>
               <div class="container-item-list">
                 <div class="grid-item-list-1">
                   <div class="grid-item-title">New to-do item</div>
@@ -142,31 +126,33 @@
                 <div class="grid-item-list-2">
                   <input
                     type="text"
-                    class="newBox-Title"
+                    id="newBox-Title"
                     placeholder="Insert todo box title"
                     maxlength="30"
                   />
                 </div>
 
                 <div class="grid-item-list-3">
-                  <select id="newBox-Location">
-                    <option class="locationFirstSelect"></option>
-                  </select>
+                  <select id="newBox-Location"></select>
                 </div>
                 <div class="grid-item-list-4">
                   <textarea
                     type="text"
-                    class="newBox-Body"
+                    id="newBox-Body"
                     placeholder="Insert any body text"
-                    maxlength="250"
+                    maxlength="100"
                     rows="4"
                   ></textarea>
                 </div>
                 <div class="grid-item-list-5">
-                  <input type="submit" class="newlist-submit" />
+                  <input type="submit" id="newlist-submit" />
                 </div>
                 <div class="grid-item-list-6">
-                  <button class="exitbuttonlist" onclick="ExitBoxPopUp()">
+                  <button
+                    button="button"
+                    class="exitbuttonlist"
+                    onclick="ExitBoxPopUp()"
+                  >
                     Cancel
                   </button>
                 </div>
