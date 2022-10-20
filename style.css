@@ -23,16 +23,19 @@
 }
 
 .grid-item-1 {
-  /* background-color: #fa8b98; */
+  background: #fffdd0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   grid-row: span 6;
   background: none;
+  padding-left: 10px;
+  height: 2000px;
 }
 
 .grid-item-2 {
+  background-color: white;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 100px 250px 250px 250px 250px 250px;
@@ -68,12 +71,9 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.todoboxtitle {
-}
-
 .todoboxbody {
-  float: left;
-  margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #grid-item-tab1 {
@@ -123,13 +123,16 @@
 #total-background {
   font-family: "arial", heletica, sans-serif;
   font-size: 12px;
-  height: 100vh;
-  background: #fffdd0;
+  height: 2000px;
+  background: white;
 }
 
 .body {
+  height: 2000px;
+  width: 100vw;
   margin: 0px;
   padding-bottom: 0;
+  background: white;
 }
 
 #total-background {
@@ -137,6 +140,10 @@
   font-size: 12px;
   height: 100vh;
   background: #fffdd0;
+}
+
+#spacing {
+  height: 20px;
 }
 
 .collapsible {
@@ -431,15 +438,15 @@
 }
 
 #grid-item-list-4 {
-  grid-column: span 2;
   display: flex;
   width: auto;
   height: auto;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   border-color: none;
   margin: 6px;
+  grid-column: span 2;
 }
 
 #newBox-Body {
@@ -486,7 +493,7 @@
   border-radius: 10px;
 }
 
-.newlist-submit:hover {
+#newlist-submit:hover {
   background-color: rgba(5, 181, 20, 0.6);
   cursor: pointer;
 }
