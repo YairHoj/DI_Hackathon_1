@@ -207,8 +207,6 @@ $(document).ready(function () {
     let toDoBoxBody = document.createElement("p");
     toDoBoxBody.textContent = boxBody;
 
-
-
     // todobox (whole box)
     toDoBoxCreation.classList.add("todobox-class");
     toDoBoxCreation.style.height = "200px";
@@ -218,8 +216,8 @@ $(document).ready(function () {
 
     // todobox title
     toDoBoxTitle.classList.add("todoboxtitle");
-    toDoBoxTitle.style.fontSize = "20px";
-    toDoBoxTitle.style.fontWeight = "200px";
+    toDoBoxTitle.style.fontSize = "19px";
+    toDoBoxTitle.style.fontWeight = "100px";
     toDoBoxTitle.style.fontFamily = "Poppins,sans-serif";
     toDoBoxTitle.style.color = "white";
 
@@ -228,6 +226,7 @@ $(document).ready(function () {
     toDoBoxBody.style.fontSize = "15px";
     toDoBoxBody.style.fontFamily = "Poppins,sans-serif";
     toDoBoxBody.style.color = "white";
+    toDoBoxBody.style.flexWrap = "wrap";
 
     // newTab.style.width = "100%";
     // newTab.style.height = "45px";
